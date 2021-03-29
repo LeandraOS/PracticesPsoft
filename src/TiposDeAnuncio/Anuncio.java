@@ -32,5 +32,4 @@ public abstract class Anuncio {
     public abstract double calculaPreco();
 
 
-
 }

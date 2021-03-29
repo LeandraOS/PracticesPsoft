@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
+
     private String nome;
     private int totalPontos;
     private List<Anuncio> listaDeAnuncios;
@@ -23,6 +24,7 @@ public class Cliente {
     }
     public String imprimeInformacoesCliente(double precoTotal){
         String informacoes = "Historico de compras de anuncios por " + getNome() + "\n" +
+                getTipohistoricoAnuncios() +
                 "Total devido é " + String.valueOf(precoTotal) + "\n" +
                 "Voce ganhou " + String.valueOf(totalPontos) + " pontos";
 
@@ -43,5 +45,13 @@ public class Cliente {
         double precoTotal = this.calculaPrecoTotal();
         return imprimeInformacoesCliente(precoTotal);
 
+    }
+
+    private String getTipohistoricoAnuncios(){
+        String tipoAnuncio = "";
+        for(Anuncio anuncio : listaDeAnuncios){
+            tipoAnuncio += anuncio.getDescricao() + "\n";
+        }
+        return tipoAnuncio;
     }
 }

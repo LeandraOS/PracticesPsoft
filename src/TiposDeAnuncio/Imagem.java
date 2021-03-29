@@ -8,6 +8,14 @@ public class Imagem extends Anuncio {
 
     @Override
     public double calculaPreco() {
-        return 2.0;
+        double precoTotal = 2;
+
+        if (diasDuracaoAnuncio > 2) {
+            precoTotal += (this.diasDuracaoAnuncio - 2) * 1.5;
+        }
+
+        return precoTotal;
+
+
     }
 }
