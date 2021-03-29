@@ -7,11 +7,15 @@ Laboratório 04 da disciplina Projeto de Software com o objetivo de retirar bad 
 Na classe Anuncio há dois grandes problemas, o primeiro se dá pelo nome do atributo *codigoPreco*(que deve ser o *precoTipoAnuncio*), pois não é claro de se deduzir o que seja, após muito tempo observando, entendi que é o código de um dos três tipos de atributos, o TEXTO, IMAGEM e VÍDEO.
 
 Solução: Acredito que estas constantes podem ser excluídas, e ao invés de se utilizar as constantes, deve-se criar três classes distintas, onde estas irão herdar da classe abstrata *Anuncio*.
-Assim, o código estará mais legível e o cálculo da compra na classe Cliente será realizado no seu respectivo tipo de anuncio, sem precisar fazer este cálculo no método histórico. Inclusive, este método histórico da classe *Compra* está muito grande (isso se dá também pelo uso dos switch case, isso indica um tipo de bad small(**long method**), por isso, este método deve ser modularizado em métodos menores( como *imprimeInformacoesCliente()* e o *calculaPontos()* e além disso os cálculos serão realizados cada qual dentro da sua respectiva classe) para isto, irei utilizar a técnica de *Extract Class* fazendo com que cada qual faça a sua devida rotina. E desse modo, no método histórico, esse novos métodos só devem ser chamados.
+Assim, o código estará mais legível e o cálculo da compra na classe Cliente será realizado no seu respectivo tipo de anuncio, sem precisar fazer este cálculo no método histórico. 
 
-Ainda na classe Cliente, acredito que o tipo ```Vector() compras```, não é o melhor. Por esse motivo, irei trocar para o tipo arrayList que me dá um leque maior de funcionalidades de operações.
+O método histórico da classe *Compra* está muito grande (isso se dá também pelo uso dos ```Switch Case```, isso indica um tipo de bad small(**long method**).
+Solução: O método ```historico()``` deve ser modularizado em métodos menores( como ```imprimeInformacoesCliente()``` e o ```calculaPontos()``` e além disso os cálculos serão realizados cada qual dentro da sua respectiva classe) para isto, irei utilizar a técnica de *Extract Class* fazendo com que cada qual faça a sua devida rotina. E desse modo, no método histórico, esse novos métodos só devem ser chamados.
+
+Ainda na classe Cliente, acredito que o tipo ```Vector() compras```, não é o melhor. Por esse motivo, irei trocar para o tipo ArrayList que me dá um leque maior de funcionalidades de operações.
 
 Além disso, ainda no método histórico podemos enxergar problemas de nomenclaturas de variáveis, como por exemplo: 
+
 - total
 - totalParcial
 - cada ( é do tipo compra, deveria se chamar compra)
@@ -42,7 +46,7 @@ A classe *Compra*, atualmente no sistema não realiza nenhum tipo de operação,
 - Classe excluída, por possuir dois tipos de bad smells (classe preguiçosa e inveja de recursos.
 
 #### Na classe Cliente: 
-O método historico será composto de mais dois métodos, o calculaPrecoTotal() que está sendo realizado em cada classe do tipo Anuncio e o método imprimeInformaçõesCliente().
+O método historico será composto de mais dois métodos, o ```calculaPrecoTotal()``` que está sendo realizado em cada classe do tipo Anuncio e o método ```imprimeInformaçõesCliente()```.
 
 
 
