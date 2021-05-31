@@ -1,3 +1,4 @@
 # :computer: Projeto de Software 
 
-Repositório destinado aos laboratórios da disciplina Projeto de Software 2020.1
+Repositório destinado aos exercícios práticos da disciplina Projeto de Software em 2020.1e.
+
